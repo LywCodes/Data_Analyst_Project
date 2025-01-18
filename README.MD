@@ -67,7 +67,7 @@ streamlit run dashboard.py
 3. don't move the csv file because it acts a data source. keep it in one folder as dashboard.py
 4. Open your VSCode and run the file by clicking the terminal and write it `streamlit run dashboard.py`.
 
-## 4. Screenshots
+## 4. Documentation
 ![Alt text](https://raw.githubusercontent.com/LywCodes/Data_Analyst_Project/main/documentation/dashboard.gif)
 
 
