@@ -136,7 +136,55 @@ with col3:
     daily_rent_total = daily_rent_df['count'].sum()
     st.metric('Total User', value= daily_rent_total)
 
+
+st.markdown(""" 
+### The most enjoyed season for bike users, both Casual and Registered
+This is indicated by the high number of bike rentals carried out by both casual users
+and registered users, where autumn has the most enthusiasts, followed by summer, winter, and spring.
+
+""")
 # Create rental counts by season
+
+# Create rental counts by season
+st.subheader('Seasonly Rentals')
+
+# Custom visualization based on provided code
+seasonal_usage = main_df.groupby('season')[['registered', 'casual']].sum().reset_index()
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+bar_width = 0.4
+x = range(len(seasonal_usage['season']))
+
+# Plotting registered users
+ax.bar(
+    [pos - bar_width / 2 for pos in x],
+    seasonal_usage['registered'],
+    width=bar_width,
+    label='Registered',
+    color='steelblue'
+)
+
+# Plotting casual users
+ax.bar(
+    [pos + bar_width / 2 for pos in x],
+    seasonal_usage['casual'],
+    width=bar_width,
+    label='Casual',
+    color='salmon'
+)
+
+# Adding labels and legends
+ax.set_xlabel('Season', fontsize=12)
+ax.set_ylabel('Total Rentals', fontsize=12)
+ax.set_title('Total Bike Rentals by Season', fontsize=14)
+ax.set_xticks(x)
+ax.set_xticklabels(seasonal_usage['season'], fontsize=10)
+ax.legend()
+
+st.pyplot(fig)
+
+#Visual 2
 st.subheader('Seasonly Rentals')
 
 fig, ax = plt.subplots(figsize=(16, 8))
@@ -155,7 +203,7 @@ sns.barplot(
     y='casual',
     data=season_rent_df,
     label='Casual',
-    color='tab:orange',
+    color='tab:cyan',
     ax=ax
 )
 
@@ -170,6 +218,17 @@ ax.tick_params(axis='y', labelsize=15)
 ax.legend()
 st.pyplot(fig)
 
+
+st.markdown(""" 
+### The factor of weather conditions in determining the level of bike rentals by users.
+Based on the chart below, it can be observed that weather conditions play a significant role
+in the interest of renters when it comes to bike rentals. Good weather offers a greater opportunity 
+for renters to engage in rentals compared to less favorable weather conditions. The data below shows 
+that renters tend to rent bikes during clear or partly cloudy weather, whereas no rentals occur during poor weather conditions.
+However, overcast weather still attracts some renters, followed by snowy or rainy weather, which has a relatively smaller 
+number of renters.
+
+""")
 # Create rental counts by weather condition
 st.subheader('Weatherly Rentals')
 
@@ -193,6 +252,13 @@ ax.tick_params(axis='x', labelsize=20)
 ax.tick_params(axis='y', labelsize=15)
 st.pyplot(fig)
 
+
+st.markdown(""" 
+### The difference in bike rental counts between weekdays and weekends
+Based on the data below, it can be observed that weekdays tend to have higher rental rates compared to weekends.
+This could be influenced by several factors. Notably, Friday shows the highest rental interest compared to the weekend.
+
+""")
 # Create rental counts by weekday, working day and holiday
 st.subheader('Weekday, Workingday, and Holiday Rentals')
 
