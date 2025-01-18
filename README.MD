@@ -67,3 +67,6 @@ streamlit run dashboard.py
 4. Open your VSCode and run the file by clicking the terminal and write it `streamlit run dashboard.py`.
 
 ## 4. Screenshots
+![image](https://github.com/LywCodes/Data_Analyst_Project/blob/main/screenshots/image_1.png?raw=true)
+![image](https://github.com/LywCodes/Data_Analyst_Project/blob/main/screenshots/image_2.png?raw=true)
+![image](https://github.com/LywCodes/Data_Analyst_Project/blob/main/screenshots/image_3.png?raw=true)
