@@ -253,3 +253,5 @@ axes[2].tick_params(axis='y', labelsize=10)
 
 plt.tight_layout()
 st.pyplot(fig)
+
+st.caption('Copyright (c) Lywen Chandra 2025')
