@@ -21,17 +21,18 @@ streamlit run dashboard.py
 │   ├── dashboard.py
 │   └── day.csv
 ├── data
-│   ├── Readme.txt
 │   ├── day.csv
 |   └── hour.csv
-├── screenshots
-|   ├── Screenshots (91).png
-|   ├── Screenshots (92).png
-|   ├── Screenshots (93).png
-|   └── Screenshots (94).png
+├── documentation
+|   ├── dashboard.gif
+|   ├── Image_1.png
+|   ├── Image_2.png
+|   ├── Image_3.png
+|   └── Image_4.png
 ├── README.md
 ├── notebook.ipynb
 └── requirements.txt
+└── url.txt
 ```
 
 ## 2. Project work cycle
